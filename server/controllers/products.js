@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
-var customerDb = mongoose.model('customerDb');
+var productDb = mongoose.model('productDb');
 
 module.exports = (function() {
 	return {
-		addCustomer: function(req,res){
-			customer = new customerDb(req.body);
-			customer.save(function(err, cust){
+		addP: function(req,res){
+			product = new productDb(req.body);
+			product.save(function(err, cust){
 				if(err){
 					console.log(err);
 					console.log('see above for error');
@@ -14,18 +14,19 @@ module.exports = (function() {
 				}
 			})
 		},
-		getCustomers: function(req, res){
-			customerDb.find({}, function(err, cust){
+		getP: function(req, res){
+			productDb.find({}, function(err, cust){
 				if(err){
 					console.log(err);
 					console.log('getmongooses function mongooses controller');
 				} else {
+					console.log("got all the products");
 					res.json(cust);
 				}
 			})
 		},
-		delete: function(req, res){
-			customerDb.remove({_id: req.params.id}, function(err, cust){
+		deleteP: function(req, res){
+			productDb.remove({_id: req.params.id}, function(err, cust){
 				if(err){
 					console.log(err);
 					console.log('getmongooses function mongooses controller');

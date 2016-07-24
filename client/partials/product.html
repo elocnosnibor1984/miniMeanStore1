@@ -1,0 +1,25 @@
+<h1>Products</h1>
+<!-- {{products}} -->
+<h3>Add a new product</h3>
+<form>
+	<p>Name: <input type="text" name="" ng-model="product.name"></p>
+	<p>Image (url): <input type="text" name="" ng-model="product.image"></p>
+	<p>Description: </p>
+	<p>
+	<textarea rows="5" cols="50" ng-model="product.description"></textarea>
+	</p>
+	<p>Initial Quantity: 
+	<select ng-model="product.qty">
+		<option>1</option>
+	</select></p>
+	<p><input type="submit" name="" value="Create" ng-click="addProduct()"></p>
+</form>
+
+<h3>Existing Products</h3>
+
+<div ng-repeat="p in products">
+	<p><img src="{{p.image}}"></p>
+	<p>{{p.name}}</p>
+	<p>{{p.description}}</p>
+	<p>Qty: {{p.qty}}</p>
+</div>

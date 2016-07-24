@@ -1,9 +1,11 @@
 var mongoose = require('mongoose');
-var CustomerSchema = new mongoose.Schema({
-    name: String
+var OrderSchema = new mongoose.Schema({
+    customer: String,
+    product: String,
+    qty: Number
 }, {timestamps:true});
 
-mongoose.model('customerDb', CustomerSchema);
+mongoose.model('orderDb', OrderSchema);
 // Validations
 // MongooseSchema.path('color').required(true, 'Color cannot be blank');
 // MongooseSchema.path('weight').required(true, 'Weight cannot be blank');

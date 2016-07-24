@@ -1,1 +1,20 @@
-<h1>This is my index partial</h1>
+<h1>Dashboard</h1>
+
+<h3>Recent Products</h3>
+<!-- {{products}} -->
+
+<div ng-repeat="p in products | orderBy: '-createdAt'| limitTo:number">
+	<img src="{{p.image}}">
+	<p>{{p.name}}</p>
+	<p>{{p.description}}</p>
+</div>
+<h3>Recent Orders</h3>
+<!-- {{orders}} -->
+<div ng-repeat="o in orders | orderBy: '-createdAt'| limitTo:number">
+	<p>{{o.customer}} bought {{o.qty}} {{o.product}}(s)</p>
+</div>
+<h3>New Customers</h3>
+<!-- {{customers}} -->
+<div ng-repeat="c in customers | orderBy: '-createdAt'| limitTo:number">
+	<p>{{c.name}} just joined at {{c.createdAt | date:"MMMM dd hh:mm"}}</p>
+</div>

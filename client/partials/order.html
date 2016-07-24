@@ -1,0 +1,35 @@
+<h1>Orders</h1>
+<!-- {{products}} -->
+<h3>Add a new order</h3>
+<!-- {{customers}} -->
+<form>
+	<p>Customer: 
+	<select ng-options="c.name for c in customers" ng-model="order.cust">
+	</select></p>
+	<p>Quantity: 
+	<select ng-options="qty for qty in number" ng-model="order.qty">
+	</select></p>
+	<p>Product: 
+	<select ng-options="p.name for p in products" ng-model="order.product">
+	</select></p>
+	<p><input type="submit" name="" value="Order" ng-click="addOrder()"></p>
+</form>
+
+<h3>Previous Orders</h3>
+<p><input type="text" name="" placeholder="filter"></p>
+
+<table>
+	<thead>
+		<tr><th>Customer Name</th><th>Product</th><th>Quantity</th><th>Date</th></tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="o in orders">
+			<td>{{o.customer}}</td>
+			<td>{{o.product}}</td>
+			<td>{{o.qty}}</td>
+			<td>{{o.createdAt | date:"MMMM dd yyyy"}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- {{orders}} -->

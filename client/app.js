@@ -14,5 +14,20 @@ var myApp = angular.module('Myapp', ['ngRoute']);
 				controller: 'indexController',
 				templateUrl: "partials/index.html"
 			})
+			.when('/products', 
+			{
+				controller: 'productsController',
+				templateUrl: "partials/product.html"
+			})
+			.when('/customers', 
+			{
+				controller: 'customerController',
+				templateUrl: "partials/customer.html"
+			})
+			.when('/orders', 
+			{
+				controller: 'ordersController',
+				templateUrl: "partials/order.html"
+			})
 	})
 }());

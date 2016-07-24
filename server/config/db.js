@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var fs = require('fs');
 
-mongoose.connect('mongodb://localhost/newDatabaseName');
+mongoose.connect('mongodb://localhost/meanStore2');
 
 var models_path = __dirname + "/../models"
 
